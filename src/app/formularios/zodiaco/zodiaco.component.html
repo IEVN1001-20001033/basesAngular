@@ -1,0 +1,62 @@
+<div>
+    <h1>Signo Zodiacal Chino</h1>
+
+    <div class="container text-center">
+        <div class="row align-items-start">
+          <div class="col">
+            <form [formGroup]="formulario"><!--[formGroup]="formulario"-->
+                <div>
+                  <h3>DATOS PERSONALES</h3>
+                  <div>
+                    <label>Nombre:</label>
+                    <input formControlName="nom" type="text">
+                  </div>                    
+                  <div>
+                      <label>A_Paterno:</label>
+                      <input formControlName="a_Paterno" type="text">
+                  </div>
+                  <div>
+                      <label>A_Materno:</label>
+                      <input formControlName="a_Materno" type="text">
+                  </div>
+                </div>
+                <div>
+                    <h3>Fecha de Nacimiento</h3>
+                    <div class="container text-center">
+                        <div class="row align-items-start">
+                          <div class="col">
+                            <label>Día:</label>
+                            <input formControlName="dia" type="number" min="0" max="31">
+                          </div>
+                          <div class="col">
+                            <label>Mes:</label>
+                            <input formControlName="mes" type="number" min="0" max="12">                          
+                          </div>
+                          <div class="col">
+                            <label>Año:</label>
+                            <input formControlName="anio" type="number" min="0">                          
+                          </div>
+                        </div>
+                    </div>     
+                </div>
+                <div>
+                    <h3>Sexo</h3>
+                    <input formControlName="m" type="radio" name="m" id="m">Masculino                     
+                    <input formControlName="f"type="radio" name="m" id="m">Femenino                     
+
+                </div>
+                <button (click)="Imprimir()">Imprimir</button><!--(click)="medirDistancia()"{{resultado}}-->
+                
+            </form>
+          </div>
+          <div class="col">
+            <h3>{{nombre}}</h3>
+            <h3>{{edad}}</h3>
+            <h3>{{signo}}</h3>
+            <img [src]="this.img" 
+                            [style.width.px]="imageWidth"
+                            [style.margin.px]="imageMargin">
+          </div>
+        </div>
+      </div>
+</div>
